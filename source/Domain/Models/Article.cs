@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Domain.Interfaces;
+using System;
 
 namespace Domain.Models
 {
-    public class Article
+    public class Article : DataBaseUnit, IModel
     {
-        public Guid Id { get; set; }
         public byte[] Content { get; set; }
     }
 }
