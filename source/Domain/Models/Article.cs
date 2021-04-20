@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fak3News.Core.Domain
+namespace Domain.Models
 {
     public class Article
     {
