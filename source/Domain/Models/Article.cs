@@ -3,7 +3,7 @@ using System;
 
 namespace Domain.Models
 {
-    public class Article : DataBaseUnit, IModel
+    public class Article : DatabaseUnit, IModel
     {
         public byte[] Content { get; set; }
     }

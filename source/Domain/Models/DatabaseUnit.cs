@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public abstract class DataBaseUnit
+    public abstract class DatabaseUnit
     {
         public Guid Id { get; set; }
     }
