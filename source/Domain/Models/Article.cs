@@ -5,6 +5,6 @@ namespace Domain.Models
 {
     public class Article : DatabaseUnit, IModel
     {
-        public byte[] Content { get; set; }
+        public string Content { get; set; }
     }
 }
