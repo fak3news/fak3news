@@ -1,11 +1,11 @@
-﻿using Domain.Interfaces;
-using Domain.Models;
+﻿using Fak3News.Domain.Interfaces;
+using Fak3News.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Data
+namespace Fak3News.Infrastructure.Data
 {
     class GenericRepository : IRepository
     {

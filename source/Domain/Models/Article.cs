@@ -1,7 +1,7 @@
-﻿using Domain.Interfaces;
+﻿using Fak3News.Domain.Interfaces;
 using System;
 
-namespace Domain.Models
+namespace Fak3News.Domain.Models
 {
     public class Article : DatabaseUnit, IModel
     {

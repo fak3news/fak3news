@@ -1,8 +1,8 @@
-﻿using Domain.Models;
+﻿using Fak3News.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Infrastructure.Data
+namespace Fak3News.Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Fak3News.Domain.Models
 {
     public abstract class DatabaseUnit
     {

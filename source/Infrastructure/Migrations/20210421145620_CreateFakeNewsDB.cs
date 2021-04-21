@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Infrastructure.Migrations
+namespace Fak3News.Infrastructure.Migrations
 {
     public partial class CreateFakeNewsDB : Migration
     {
