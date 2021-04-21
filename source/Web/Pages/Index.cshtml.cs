@@ -1,5 +1,5 @@
-﻿using Domain.Interfaces.Services;
-using Domain.Models;
+﻿using Fak3News.Domain.Interfaces.Services;
+using Fak3News.Domain.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain.Interfaces.Services;
-using Domain.Models;
-using Infrastructure.Data;
+using Fak3News.Domain.Interfaces.Services;
+using Fak3News.Domain.Models;
+using Fak3News.Infrastructure.Data;
 
 namespace Infrastructure.Services
 {

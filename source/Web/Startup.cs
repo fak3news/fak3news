@@ -1,5 +1,5 @@
-using Domain.Interfaces.Services;
-using Infrastructure.Data;
+using Fak3News.Domain.Interfaces.Services;
+using Fak3News.Infrastructure.Data;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

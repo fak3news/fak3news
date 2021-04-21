@@ -1,9 +1,9 @@
-﻿using Domain.Models;
+﻿using Fak3News.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Domain.Interfaces.Services
+namespace Fak3News.Domain.Interfaces.Services
 {
     public interface IArticleService
     {
