@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Domain.Interfaces.Services;
+using Domain.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace Web.Pages
@@ -7,9 +9,11 @@ namespace Web.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, IArticleService service)
         {
             _logger = logger;
+
+            service.Create(new Article() { Content="Hello World" });
         }
 
         public void OnGet()
