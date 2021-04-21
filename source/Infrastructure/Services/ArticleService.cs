@@ -19,28 +19,28 @@ namespace Infrastructure.Services
 
         public Task<Article> Create(Article article)
         {
-            return repository.Create(article);
+            return repository.CreateAsync(article);
         }
 
         public async Task<Article> Delete(Article article)
         {
-            await repository.Delete(article);
+            await repository.DeleteAsync(article);
             return article;
         }
 
         public Task<Article> Get(Guid id)
         {
-            return repository.Get<Article>(id);
+            return repository.GetAsync<Article>(id);
         }
 
         public Task<IEnumerable<Article>> GetAll()
         {
-            return repository.GetAll<Article>();
+            return repository.GetAllAsync<Article>();
         }
 
         public async Task<Article> Update(Article article)
         {
-            await repository.Update(article);
+            await repository.UpdateAsync(article);
             return article;
         }
     }
