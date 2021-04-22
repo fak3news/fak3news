@@ -5,7 +5,7 @@ using Fak3News.Domain.Interfaces.Services;
 using Fak3News.Domain.Models;
 using Fak3News.Infrastructure.Data;
 
-namespace Infrastructure.Services
+namespace Fak3News.Infrastructure.Services
 {
     public class ArticleService : IArticleService
     {
