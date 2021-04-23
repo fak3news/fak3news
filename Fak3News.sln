@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "source\Domain\Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "source\Infrastructure\Infrastructure.csproj", "{469FC829-1C40-459B-A34C-D7EF52E7E9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "source\Web\Web.csproj", "{EF6D306D-308B-4A57-98B0-C7536BCDE6DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "source\Web\Web.csproj", "{EF6D306D-308B-4A57-98B0-C7536BCDE6DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesTest", "tests\ServicesTest\ServicesTest.csproj", "{3F716CD7-565B-4CCF-8E47-5F942A416099}"
 EndProject
