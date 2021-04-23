@@ -11,29 +11,14 @@
     <script src="~/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" asp-page="Index">Fak3News</a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" asp-page="Index">Home</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-        <div class="row">
-            @RenderBody()
-        </div>
+    <div class="d-flex flex-column">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-page="Index">FAK3<b>NEWS</b></a>
+            </div>
+        </nav>
     </div>
 
+    @RenderBody()
 </body>
 </html>
