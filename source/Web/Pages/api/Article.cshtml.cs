@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 
-namespace Fak3News.Web.Pages.api
+namespace Fak3News.Web.Pages.API
 {
     public class ArticleModel : PageModel
     {
