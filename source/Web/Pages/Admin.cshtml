@@ -2,3 +2,12 @@
 @model Fak3News.Web.Pages.AdminModel
 @{
 }
+
+<div class="container-fluid list-group">
+    @foreach (var item in Model.Articles)
+    {
+        <a class="list-group-item">
+            @item.Title
+        </a>
+    }
+</div>
