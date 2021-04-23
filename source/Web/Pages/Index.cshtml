@@ -3,20 +3,20 @@
 @{
 }
 
-<div>
-   <table>
-       <thead>
-           <tr>
-               <th>Id</th>
-               <th>Content</th>
-           </tr>
-       </thead>
-       @foreach (var item in Model.Articles)
-       {
-           <tr>
-               <td>@item.Id</td>
-               <td>@item.Content</td>
-           </tr>
-       }
-   </table>
-</div>
+<link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+<body>
+    <div class="container">
+        @foreach (var item in Model.Articles)
+        {
+            <div class="container">
+                <div class="row justify-content-center">
+                    @item.Id
+                </div>
+                <div class="row justify-content-center">
+                    @item.Content
+                </div>
+            </div>
+        }
+    </div>
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+</body>
