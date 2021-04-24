@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fak3News.Domain.Interfaces.Services;
 using Fak3News.Domain.Models;
+using Fak3News.Web.WebServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,12 +12,15 @@ namespace Fak3News.Web.Pages
 {
     public class IndexModel : PageModel
     {
-        public IndexModel(IArticleService service)
+        public IndexModel(IArticleService articelService, IMarkdownService markdownService)
         {
-            articleService = service;
+            articleService = articelService;
+            MarkdownService = markdownService;
         }
 
         private readonly IArticleService articleService;
+
+        public IMarkdownService MarkdownService { get; set; }
 
         public List<Article> Articles { get; set; } = new List<Article>();
 

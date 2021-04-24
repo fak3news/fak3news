@@ -4,17 +4,20 @@
 }
 
 <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/index.css" />
+
 <body>
     <div class="container">
         @foreach (var item in Model.Articles)
         {
-            <div class="container">
-                <div class="row justify-content-center">
-                    @item.Id
+            <div class="container border rounded article-bar">
+                <div class="row justify-content-center border bg-light">
+                    <p class="title">@item.Title</p>
                 </div>
                 <div class="row justify-content-center">
-                    @item.Content
+                    <p class="short-description">@Model.MarkdownService.Parse(item.Description)</p>
                 </div>
+                <button type="submit" class="btn btn-outline-success btn-continue-reading">Continue Reading</button>
             </div>
         }
     </div>
