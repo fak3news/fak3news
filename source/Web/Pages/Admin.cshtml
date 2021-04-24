@@ -3,10 +3,10 @@
 @{
 }
 
-<div class="container-fluid list-group">
+<div class="list-group">
     @foreach (var item in Model.Articles)
     {
-        <a class="list-group-item">
+        <a class="list-group-item list-group-item-action">
             @item.Title
         </a>
     }
