@@ -12,6 +12,7 @@ using Fak3News.Infrastructure.Services;
 using Fak3News.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Fak3News.Web.WebServices;
 
 namespace Fak3News.Web
 {
@@ -29,6 +30,8 @@ namespace Fak3News.Web
             services.AddRazorPages();
 
             services.AddTransient<IArticleService, ArticleService>();
+
+            services.AddTransient<IMarkdownService, MarkdownService>();
 
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("FakeNewsDBConnection")));
