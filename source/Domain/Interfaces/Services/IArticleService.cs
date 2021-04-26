@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Fak3News.Domain.Models.DbResources;
 
 namespace Fak3News.Domain.Interfaces.Services
 {
