@@ -9,7 +9,7 @@
 
     @foreach (var item in Model.Articles)
     {
-        <a href="#" class="list-group-item list-group-item-action">
+        <a asp-page="/Article" asp-route-ID="@item.Id" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">@item.Title</h5>
                 <small>0 days ago</small>
