@@ -4,29 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fak3News.Domain.Interfaces.Services;
 using Fak3News.Domain.Models;
+using Fak3News.Infrastructure.Services;
 using Fak3News.Web.WebServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Fak3News.Web.Pages
 {
-    public class IndexModel : PageModel
+    public class ArticleModel : PageModel
     {
-        public IndexModel(IArticleService articelService, IMarkdownService markdownService)
-        {
-            articleService = articelService;
-            MarkdownService = markdownService;
-        }
-
         private readonly IArticleService articleService;
 
         public IMarkdownService MarkdownService { get; set; }
+        public Article Article { get; set; }
 
-        public List<Article> Articles { get; set; } = new List<Article>();
-
-        public async Task<IActionResult> OnGet()
+        public ArticleModel(IArticleService articleService, IMarkdownService markdownService)
         {
-            Articles = (await articleService.GetAll()).ToList();
+            this.articleService = articleService;
+            this.MarkdownService = markdownService;
+        }
+
+        public async Task<IActionResult> OnGet(Guid id)
+        {
+            Article = await articleService.Get(id);
             return Page();
         }
     }
