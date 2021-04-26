@@ -1,0 +1,11 @@
+﻿@page
+@model Fak3News.Web.Pages.ArticleModel
+@{
+}
+
+<link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+
+<div class="container gap-3 list-group">
+    <div class="row justify-content-center">@Model.Article.Title</div>
+    <div class="row justify-content-center">@Model.MarkdownService.Parse(Model.Article.Content)</div>
+</div>
