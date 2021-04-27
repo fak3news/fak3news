@@ -12,7 +12,7 @@
 
                 <div class="btn-group">
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#@Model.IdToHtmlId(item.Id) ">Details</button>
-                    <a type="button" class="btn btn-warning" asp-page="/EditArticle" asp-route-ID="@item.Id">Edit</a>
+                    <button type="submit" class="btn btn-warning" asp-page="/EditArticle" asp-route-ID="@item.Id">Edit</button>
                     <button type="submit" class="btn btn-danger" asp-page-handler="delete" asp-route-ID="@item.Id">Delete</button>
                 </div>
 
