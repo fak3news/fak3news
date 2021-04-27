@@ -24,5 +24,10 @@ namespace Fak3News.Web.Pages
             Articles = (await articleService.GetAll()).ToList();
             return Page();
         }
+
+        public string IdToHtmlId(Guid id)
+        {
+            return "a" + id.ToString();
+        }
     }
 }
