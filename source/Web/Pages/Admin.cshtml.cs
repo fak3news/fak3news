@@ -24,6 +24,15 @@ namespace Fak3News.Web.Pages
             Articles = (await articleService.GetAll()).ToList();
             return Page();
         }
+        public async Task<IActionResult> OnPostDeleteAsync(Guid id)
+        {
+            var article = await articleService.Get(id);
+
+            if (article != null)
+                await articleService.Delete(article);
+
+            return new RedirectToPageResult("Admin");
+        }
 
         public string IdToHtmlId(Guid id)
         {
