@@ -12,7 +12,7 @@
 
             <div class="btn-group">
                 <button type="button" class="btn btn-info">Details</button>
-                <button type="button" class="btn btn-warning">Edit</button>
+                <a type="button" class="btn btn-warning" asp-page="/EditArticle" asp-route-ID="@item.Id">Edit</a>
                 <button type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
