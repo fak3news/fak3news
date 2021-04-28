@@ -21,8 +21,12 @@ namespace Fak3News.Web.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            Articles = (await articleService.GetAll()).ToList();
-            return Page();
+            if (User.Identity.IsAuthenticated)
+            {
+                Articles = (await articleService.GetAll()).ToList();
+                return Page();
+            }
+            return RedirectToPage("Index");
         }
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {

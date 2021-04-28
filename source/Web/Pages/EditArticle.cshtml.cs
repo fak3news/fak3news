@@ -23,13 +23,17 @@ namespace Fak3News.Web.Pages
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
-            Article = await ArticleService.Get(id.GetValueOrDefault());
+            if (User.Identity.IsAuthenticated)
+            {
+                Article = await ArticleService.Get(id.GetValueOrDefault());
 
-            if (Article == null)
-                Article = new Article()
-                { Id = Guid.NewGuid() };
+                if (Article == null)
+                    Article = new Article()
+                    { Id = Guid.NewGuid() };
 
-            return Page();
+                return Page();
+            }
+            return RedirectToPage("Index");
         }
 
         public async Task<IActionResult> OnPostAsync()
