@@ -13,6 +13,8 @@ using Fak3News.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Fak3News.Web.WebServices;
+using Fak3News.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Fak3News.Web
 {
@@ -35,6 +37,9 @@ namespace Fak3News.Web
 
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("FakeNewsDBConnection")));
+
+            services.AddIdentity<Admin, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +54,7 @@ namespace Fak3News.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();    
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
