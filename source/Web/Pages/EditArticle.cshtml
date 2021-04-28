@@ -1,0 +1,30 @@
+﻿@page "{id:Guid?}"
+@model Fak3News.Web.Pages.EditArticleModel
+@{
+}
+<form method="post">
+    <div class="d-grid container w-50 gap-2">
+
+        <div class="form-floating">
+            <input id="id-input" readonly class="form-control" asp-for="Article.Id">
+            <label for="id-input">ID</label>
+        </div>
+
+        <div class="form-floating">
+            <input id="title-input" class="form-control" asp-for="Article.Title"/>
+            <label for="title-input">Title</label>
+        </div>
+
+        <div class="form-floating">
+            <input id="description-input" class="form-control" asp-for="Article.Description">
+            <label for="description-input">Description</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea id="content-input" rows="16" class="form-control h-auto" asp-for="Article.Content"></textarea>
+            <label for="content-input">Content</label>
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+</form>
