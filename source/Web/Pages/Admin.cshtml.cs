@@ -26,7 +26,7 @@ namespace Fak3News.Web.Pages
                 Articles = (await articleService.GetAll()).ToList();
                 return Page();
             }
-            return RedirectToPage("Index");
+            return RedirectToPage("Login");
         }
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {
