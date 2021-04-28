@@ -7,7 +7,7 @@ using Fak3News.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Fak3News.Web.Pages
+namespace Fak3News.Web.Pages.Admin
 {
     public class EditArticleModel : PageModel
     {

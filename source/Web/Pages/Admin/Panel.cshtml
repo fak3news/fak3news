@@ -1,0 +1,60 @@
+﻿@page
+@model Fak3News.Web.Pages.Admin.AdminModel
+@{
+}
+
+<div class="container gap-3 list-group">
+    <form>
+        <button type="submit" class="btn btn-outline-primary" asp-page="EditArticle">Create New</button>
+    </form>
+
+    @foreach (var item in Model.Articles)
+    {
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+            <a class="col" asp-page="Article" asp-route-ID="@item.Id">@item.Title</a>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#@Model.IdToHtmlId(item.Id) ">Details</button>
+
+                <form>
+                    <button type="submit" class="btn btn-warning" asp-page="EditArticle" asp-route-ID="@item.Id">Edit</button>
+                </form>
+
+                <form method="post">
+                    <button type="submit" class="btn btn-danger" asp-page-handler="delete" asp-route-ID="@item.Id">Delete</button>
+                </form>
+            </div>
+
+            <div class="modal fade" id="@Model.IdToHtmlId(item.Id)" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex justify-content-between">
+                                <p>Id</p>
+                                <p>@item.Id</p>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <p>Title</p>
+                                <p>@item.Title</p>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <p>Created At</p>
+                                <p>@item.CreatedAt</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
