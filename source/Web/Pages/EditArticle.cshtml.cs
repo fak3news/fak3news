@@ -13,6 +13,7 @@ namespace Fak3News.Web.Pages
     {
         public IArticleService ArticleService { get; set; }
 
+        [BindProperty]
         public Article Article { get; set; }
 
         public EditArticleModel(IArticleService articleService)
@@ -20,40 +21,29 @@ namespace Fak3News.Web.Pages
             ArticleService = articleService;
         }
 
-        public async Task<IActionResult> OnGet(Guid id)
+        public async Task<IActionResult> OnGetAsync(Guid? id)
         {
-            try
-            {
-                Article = await ArticleService.Get(id);
-            }
-            catch (Exception)
-            {
-            }
+            Article = await ArticleService.Get(id.GetValueOrDefault());
+
+            if (Article == null)
+                Article = new Article()
+                { Id = Guid.NewGuid() };
 
             return Page();
         }
 
-        public void OnPostArticle(string id, string title, string description, string content)
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (id != null)
+            try
             {
-                ArticleService.Update(new Article()
-                {
-                    Id = Guid.Parse(id),
-                    Title = title,
-                    Description = description,
-                    Content = content
-                });
+                await ArticleService.Update(Article);
             }
-            else
+            catch (Exception)
             {
-                ArticleService.Create(new Article()
-                {
-                    Title = title,
-                    Description = description,
-                    Content = content
-                });
+                await ArticleService.Create(Article);
             }
+
+            return RedirectToPage("Admin");
         }
     }
 }
