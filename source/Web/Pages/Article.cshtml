@@ -4,6 +4,6 @@
     ViewBag.Title = @Model.Article.Title;
 }
 
-<div class="container border rounded-2 p-3 justify-content-center">
+<div class="border rounded-2 p-3 justify-content-center">
     @Model.MarkdownService.Parse(Model.Article.Content)
 </div>
