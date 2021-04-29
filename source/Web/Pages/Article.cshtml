@@ -4,6 +4,13 @@
     ViewBag.Title = @Model.Article.Title;
 }
 
+<style>
+    img {
+        max-width: 100%;
+        height: auto
+    }
+</style>
+
 <div class="border rounded-2 p-3 justify-content-center">
     @Model.MarkdownService.Parse(Model.Article.Content)
 </div>
