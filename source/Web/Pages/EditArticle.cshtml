@@ -1,6 +1,7 @@
 ﻿@page "{id:Guid?}"
 @model Fak3News.Web.Pages.EditArticleModel
 @{
+    ViewBag.Title = "Edit Article";
 }
 
 <form method="post">
@@ -12,7 +13,7 @@
         </div>
 
         <div class="form-floating">
-            <input id="title-input" class="form-control" asp-for="Article.Title"/>
+            <input id="title-input" class="form-control" asp-for="Article.Title" />
             <label for="title-input">Title</label>
         </div>
 
