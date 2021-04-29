@@ -23,9 +23,10 @@ namespace Fak3News.Web.Pages
         {
             if (User.Identity.IsAuthenticated)
             {
-                Articles = (await articleService.GetAll()).ToList();
+                Articles = (await articleService.GetAll()).OrderByDescending(a => a.CreatedAt.Ticks).ToList();
                 return Page();
             }
+
             return RedirectToPage("Login");
         }
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)

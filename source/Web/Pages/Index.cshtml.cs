@@ -26,7 +26,7 @@ namespace Fak3News.Web.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            Articles = (await articleService.GetAll()).ToList();
+            Articles = (await articleService.GetAll()).OrderByDescending(a => a.CreatedAt.Ticks).ToList();
             return Page();
         }
     }
