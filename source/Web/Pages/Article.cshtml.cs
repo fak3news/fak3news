@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Fak3News.Domain.Interfaces.Services;
 using Fak3News.Domain.Models;
-using Fak3News.Infrastructure.Services;
 using Fak3News.Web.WebServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

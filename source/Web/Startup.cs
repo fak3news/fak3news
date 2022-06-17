@@ -1,20 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Fak3News.Domain.Interfaces.Services;
-using Fak3News.Infrastructure.Services;
-using Fak3News.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Fak3News.Infrastructure.Services;
+using Fak3News.Infrastructure.Data;
 using Fak3News.Web.WebServices;
 using Fak3News.Domain.Models;
-using Microsoft.AspNetCore.Identity;
+using Fak3News.Domain.Interfaces.Services;
 
 namespace Fak3News.Web
 {
@@ -54,7 +49,7 @@ namespace Fak3News.Web
 
             app.UseRouting();
 
-            app.UseAuthentication();    
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
