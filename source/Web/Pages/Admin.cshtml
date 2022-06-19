@@ -9,6 +9,11 @@
         <button type="submit" class="btn btn-outline-primary" asp-page="EditArticle">Create New</button>
     </form>
 
+    @if (Model.Articles.Count == 0)
+    {
+        <div class="list-group-item">Post something to fill this emptiness</div>
+    }
+
     @foreach (var item in Model.Articles)
     {
         <div class="list-group-item d-flex justify-content-between align-items-center">

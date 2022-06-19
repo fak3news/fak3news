@@ -6,17 +6,21 @@
 
 <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
 
-<div class="gap-3 list-group">
+    <div class="gap-3 list-group">
+        @if (Model.Articles.Count == 0)
+        {
+            <div class="list-group-item">Looks so empty...</div>
+        }
 
-    @foreach (var item in Model.Articles)
-    {
-        <a asp-page="/Article" asp-route-ID="@item.Id" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">@item.Title</h5>
-                <small>@item.CreatedAt.ToString("dddd, dd MMMM yyyy")</small>
-            </div>
+        @foreach (var item in Model.Articles)
+        {
+            <a asp-page="/Article" asp-route-ID="@item.Id" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@item.Title</h5>
+                    <small>@item.CreatedAt.ToString("dddd, dd MMMM yyyy")</small>
+                </div>
 
-            <small class="mb-1">@item.Description</small>
-        </a>
-    }
-</div>
+                <small class="mb-1">@item.Description</small>
+            </a>
+        }
+    </div>
