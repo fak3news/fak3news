@@ -15,12 +15,14 @@ namespace Fak3News.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -30,8 +32,9 @@ namespace Fak3News.Web
 
             services.AddTransient<IMarkdownService, MarkdownService>();
 
-            services.AddDbContext<AppDbContext>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("FakeNewsDBConnection")));
+            services.AddDbContext<AppDbContext>(options => {
+                options.UseSqlite(Configuration.GetConnectionString("SqliteConnection"));
+            });
 
             services.AddIdentity<Admin, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
