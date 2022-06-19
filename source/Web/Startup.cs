@@ -32,11 +32,22 @@ namespace Fak3News.Web
 
             services.AddTransient<IMarkdownService, MarkdownService>();
 
-            services.AddDbContext<AppDbContext>(options => {
+            services.AddDbContext<AppDbContext>(options =>
+            {
                 options.UseSqlite(Configuration.GetConnectionString("SqliteConnection"));
             });
 
-            services.AddIdentity<Admin, IdentityRole>()
+            services.AddIdentity<Admin, IdentityRole>(options =>
+            {
+                options.Password = new PasswordOptions()
+                {
+                    RequireDigit = false,
+                    RequiredLength = 4,
+                    RequireLowercase = false,
+                    RequireUppercase = false,
+                    RequireNonAlphanumeric = false,
+                };
+            })
                 .AddEntityFrameworkStores<AppDbContext>();
         }
 
