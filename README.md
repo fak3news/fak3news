@@ -1,4 +1,4 @@
-# Fak3News
+# FAK3NEWS
 
 This is a toy blogging platform that allows you to do some basic blog posts in markdown language
 
