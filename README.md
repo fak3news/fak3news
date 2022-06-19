@@ -10,3 +10,15 @@ This is a toy blogging platform that allows you to do some basic blog posts in m
   ![Post](https://user-images.githubusercontent.com/38355785/174483477-81a56405-b480-4643-be4b-ec6201879d95.png)
   ![Home](https://user-images.githubusercontent.com/38355785/174483493-7ea99f24-9827-4cac-b1ba-9faed0975e1b.png)
 </details>
+
+## Docker
+
+```
+# Build image
+docker build --tag fak3news --file Dockerfile .
+
+# Run image
+docker run --network=host fak3news
+```
+
+Once started, the website available at http://localhost
