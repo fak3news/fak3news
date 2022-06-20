@@ -13,7 +13,7 @@ This is a toy blogging platform that allows you to do blog posts in markdown lan
 
 ## Docker
 
-```
+```bash
 # Build image
 docker build --tag fak3news --file Dockerfile .
 
